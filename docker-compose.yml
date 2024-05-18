@@ -49,7 +49,7 @@ services:
       - weaviate_data:/var/lib/weaviate
     restart: on-failure:0
     healthcheck:
-      test: wget --no-verbose --tries=3 --spider http://localhost:8080/v1/.well-known/ready || exit 1
+      test: wget --no-verbose --tries=3 --spider http://localhost:8090/v1/.well-known/ready || exit 1
       interval: 5s
       timeout: 10s
       retries: 5
