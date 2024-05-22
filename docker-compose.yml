@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     expose:
-      - 8100:8000
+      - 8100
     environment:
       - WEAVIATE_URL_VERBA=http://weaviate:8090
       - OPENAI_API_KEY=$OPENAI_API_KEY
@@ -43,8 +43,8 @@ services:
       - http
     image: semitechnologies/weaviate:1.24.2
     expose:
-      - 8090:8080
-      - 3100:8080
+      - 8090
+      - 3100
     volumes:
       - weaviate_data:/var/lib/weaviate
     restart: on-failure:0
