@@ -118,6 +118,7 @@ Below is a comprehensive list of the API keys and variables you may require:
 | WEAVIATE_URL_VERBA             | URL to your hosted Weaviate Cluster                        | Connect to your [WCS](https://console.weaviate.cloud/) Cluster                    |
 | WEAVIATE_API_KEY_VERBA         | API Credentials to your hosted Weaviate Cluster            | Connect to your [WCS](https://console.weaviate.cloud/) Cluster                    |
 | OPENAI_API_KEY                 | Your API Key                                               | Get Access to [OpenAI](https://openai.com/) Models                                |
+| OPENAI_BASE_URL                | URL to OpenAI instance                                     | Models                                                                            |
 | COHERE_API_KEY                 | Your API Key                                               | Get Access to [Cohere](https://cohere.com/) Models                                |
 | OLLAMA_URL                     | URL to your Ollama instance (e.g. http://localhost:11434 ) | Get Access to [Ollama](https://ollama.com/) Models                                |
 | OLLAMA_MODEL                   | Model Name (e.g. llama)                                    | Get Access to a specific [Ollama](https://ollama.com/) Model                      |
@@ -209,7 +210,7 @@ OPENAI_API_KEY=<YOUR_KEY>
 OPENAI_BASE_URL=http://XXX.openai.azure.com
 ```
 
-- Azure OpenAI ressource name, which is XXX if your endpoint is XXX.openai.azure.com
+- Azure OpenAI resource name, which is XXX if your endpoint is XXX.openai.azure.com
 
 ```
 AZURE_OPENAI_RESOURCE_NAME=<YOUR_AZURE_RESOURCE_NAME>
@@ -408,4 +409,4 @@ You can learn more about Verba's architecture and implementation in its [technic
   - Remove the directory `rm ~/.local/share/weaviate`
 
 - **How can I specify the port?**
-  - You can use the port and host flag `verba start --port 9000 -host 0.0.0.0`
+  - You can use the port and host flag `verba start --port 9000 --host 0.0.0.0`
