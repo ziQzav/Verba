@@ -27,17 +27,11 @@ services:
     depends_on:
       weaviate:
         condition: service_healthy
-    healthcheck:
-      test: wget --no-verbose --tries=3 --spider https://verba.mcx.design || exit 1
-      interval: 5s
-      timeout: 10s
-      retries: 5
-      start_period: 10s
 
   weaviate:
     command:
       - --host
-      - 0.0.0.0
+      - https://vea.mcx.design
       - --port
       - '8081'
       - --scheme
@@ -49,12 +43,6 @@ services:
     volumes:
       - weaviate_data:/var/lib/weaviate
     restart: on-failure:0
-    healthcheck:
-      test: wget --no-verbose --tries=3 --spider https://vea.mcx.design/v1/.well-known/ready || exit 1
-      interval: 5s
-      timeout: 10s
-      retries: 5
-      start_period: 10s
     environment:
       OPENAI_APIKEY: $OPENAI_API_KEY
       COHERE_APIKEY: $COHERE_API_KEY
